@@ -35,9 +35,9 @@ Modifiquei o projeto em https://github.com/UrsKR/Java-XML-Signature para atender
     Do what you want. Whether it's modify, copy, distribute, use comercially - I don't care.
     The project comes without any warranty whatsoever.
 
-Como eu prefiro colocar licenças conhecidas ao invés de ficar criando as minhas (usar uma já consagrada facilita para todo mundo). Eu estou distribuindo tudo sob a licença MIT, que acho que mantem o mesmo espirito da licença original, mas melhor escrito (a condição não se aplica no caso de Urs Reupke):
+Como eu prefiro colocar licenças conhecidas ao invés de ficar criando as minhas (usar uma já consagrada facilita para todo mundo). Eu estou distribuindo todas minhas modificações sob a licença Expat (MIT), que acho que mantem o mesmo espirito da licença original:
 
-    Copyright (c) 2013 Urs Reupke <ursreupke@gmail.com>, Rafael Cunha de Almeida <rafael@kontesti.me>
+    Copyright (c) Rafael Cunha de Almeida <rafael@kontesti.me>
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal

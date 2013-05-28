@@ -1,0 +1,29 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: rps-sign
+Source: https://github.com/aflag/rps-sign
+
+Files: * 
+Copyright: 2011 Urs Reupke <ursreupke@gmail.com>
+License: Do whatever license
+ Do what you want. Whether it's modify, copy, distribute, use comercially - I
+ don't care. The project comes without any warranty whatsoever.
+
+Files: src/de/butatopanto/xmlsig/XmlSigner.java
+Copyright: 2013 Rafael Cunha de Almeida <ursreupke@gmail.com>
+License: Expat
+
+Files: Makefile
+Copyright: 2013 Rafael Cunha de Almeida <ursreupke@gmail.com>
+License: Expat
+
+Files: README.md
+Copyright: 2013 Rafael Cunha de Almeida <ursreupke@gmail.com>
+License: Expat
+
+Files: pom.xml
+Copyright: 2013 Rafael Cunha de Almeida <ursreupke@gmail.com>
+License: Expat
+
+Files: debian/*
+Copyright: 2013 Rafael Cunha de Almeida <rafael@kontesti.me>
+License: Expat
