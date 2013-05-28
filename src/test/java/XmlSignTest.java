@@ -24,18 +24,18 @@ public class XmlSignTest {
         this.signer = new XmlSigner(keyData);
     }
 
-    private PrivateKeyData createKeyData() {
-        String pathToKeystore = getPathToFileOnClasspath("certificate.p12");
-        String passphraseForKeystore = "pass";
-        String passphraseForKey = "pass";
-        return new PrivateKeyData(pathToKeystore, passphraseForKeystore, passphraseForKey);
-    }
-
     @Test
     public void canValidateAFileItSignedItself() throws Exception {
         String pathToInputFile = getPathToInputFile();
         String pathToOutputFile = getPathToOutputFile();
         sign(pathToInputFile, pathToOutputFile);
+    }
+    
+    private PrivateKeyData createKeyData() {
+        String pathToKeystore = getPathToFileOnClasspath("certificate.p12");
+        String passphraseForKeystore = "pass";
+        String passphraseForKey = "pass";
+        return new PrivateKeyData(pathToKeystore, passphraseForKeystore, passphraseForKey);
     }
 
     private void sign(String pathToInputFile, String pathToOutputFile) throws Exception {
