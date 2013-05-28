@@ -1,5 +1,12 @@
 package de.butatopanto.xmlsig;
 
+import org.apache.commons.cli.CommandLine;
+import org.apache.commons.cli.HelpFormatter;
+import org.apache.commons.cli.Options;
+import org.apache.commons.cli.CommandLineParser;
+import org.apache.commons.cli.BasicParser;
+import org.apache.commons.cli.ParseException;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
@@ -80,6 +87,33 @@ public class XmlSigner extends DomValidationOperator {
     }
     
     public static void main(String args[]) throws NoSuchAlgorithmException, UnrecoverableEntryException, KeyStoreException, CertificateException, IOException, InvalidAlgorithmParameterException, ParserConfigurationException, SAXException, MarshalException, XMLSignatureException, TransformerException {
-    	new XmlSigner(new PrivateKeyData(args[0], args[1], args[1])).sign(args[2], args[3]);
+    	Options options = new Options();
+    	options.addOption("h", "help", false, "exibe esta mensagem");
+    	options.addOption("k", "key", true, "chave PKCS12 no formato pfx");
+    	options.addOption("p", "password", true, "senha");
+    	options.addOption("i", "input", true, "arquivo de entrada (não assinado)");
+    	options.addOption("o", "output", true, "arquivo de saida (assinado)");
+    	CommandLineParser parser = new BasicParser();
+    	CommandLine line;
+    	HelpFormatter formatter = new HelpFormatter();
+    	try {
+			line = parser.parse( options, args );
+		} catch (ParseException e) {
+			formatter.printHelp("xmlsign", options, true);
+			return;
+		}
+    	if (line.hasOption("h")) {
+    		formatter.printHelp("xmlsign", options, true);
+			return;
+    	}
+    	if (!line.hasOption("k") || !line.hasOption("p") || !line.hasOption("i") || !line.hasOption("o")) {
+    		formatter.printHelp("xmlsign", options, true);
+			return;
+    	}
+    	String key = line.getOptionValue("k");
+    	String pass = line.getOptionValue("p");
+    	String input = line.getOptionValue("i");
+    	String output = line.getOptionValue("o");
+    	new XmlSigner(new PrivateKeyData(key, pass, pass)).sign(input, output);
     }
 }
