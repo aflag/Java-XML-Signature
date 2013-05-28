@@ -10,16 +10,18 @@ No caso, eu consigo assinar documentos do lote de envio contidos neste arquivo
 
 http://www.pbh.gov.br/bhissdigital/download/nfse/Lote_RPS.zip
 
-Como usar o projeto
+Como instalar o projeto
 -------------------
-Este projeto pode ser modificado usando o eclipse e maven. Para gerar o .jar use o comando:
+Este projeto pode ser modificado usando o eclipse e maven. Para gerar o executável rps-sign, rode o comando (você precisa ter o maven instalado):
 
-    mvn package
+    ./distribute
+
+Isso irá gerar um executável rps-sign que rodará usando o java do sistema, em /usr/bin/java. O programa foi testado com openjdk 7
 
 Uso
 ---
-    java -jar target/rps-sign-1.0-jar-with-dependencies.jar
-    usage: xmlsign [-h] [-i <arg>] [-k <arg>] [-o <arg>] [-p <arg>]
+    ./rps-sign
+    usage: rps-sign [-h] [-i <arg>] [-k <arg>] [-o <arg>] [-p <arg>]
      -h,--help             exibe esta mensagem
      -i,--input <arg>      arquivo de entrada (não assinado)
      -k,--key <arg>        chave PKCS12 no formato pfx
