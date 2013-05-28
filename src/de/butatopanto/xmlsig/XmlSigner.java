@@ -99,15 +99,15 @@ public class XmlSigner extends DomValidationOperator {
     	try {
 			line = parser.parse( options, args );
 		} catch (ParseException e) {
-			formatter.printHelp("xmlsign", options, true);
+			formatter.printHelp("rps-sign", options, true);
 			return;
 		}
     	if (line.hasOption("h")) {
-    		formatter.printHelp("xmlsign", options, true);
+    		formatter.printHelp("rps-sign", options, true);
 			return;
     	}
     	if (!line.hasOption("k") || !line.hasOption("p") || !line.hasOption("i") || !line.hasOption("o")) {
-    		formatter.printHelp("xmlsign", options, true);
+    		formatter.printHelp("rps-sign", options, true);
 			return;
     	}
     	String key = line.getOptionValue("k");
