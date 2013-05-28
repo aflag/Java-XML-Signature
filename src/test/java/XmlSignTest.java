@@ -1,6 +1,6 @@
+package test.java;
 import de.butatopanto.xmlsig.PrivateKeyData;
 import de.butatopanto.xmlsig.XmlSigner;
-import de.butatopanto.xmlsig.XmlValidator;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -12,23 +12,16 @@ import java.net.URL;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-public class XmlRoundtripTest {
+public class XmlSignTest {
 
     @Rule
     public TemporaryFolder folder = new TemporaryFolder();
     private XmlSigner signer;
-    private XmlValidator validator;
 
     @Before
     public void createSignerWithKeyData() throws Exception {
         PrivateKeyData keyData = createKeyData();
         this.signer = new XmlSigner(keyData);
-    }
-
-    @Before
-    public void createValidatorWithKeyData() throws Exception {
-        PrivateKeyData keyData = createKeyData();
-        this.validator = new XmlValidator(keyData);
     }
 
     private PrivateKeyData createKeyData() {
@@ -43,20 +36,14 @@ public class XmlRoundtripTest {
         String pathToInputFile = getPathToInputFile();
         String pathToOutputFile = getPathToOutputFile();
         sign(pathToInputFile, pathToOutputFile);
-        validate(pathToOutputFile);
     }
 
     private void sign(String pathToInputFile, String pathToOutputFile) throws Exception {
         signer.sign(pathToInputFile, pathToOutputFile);
     }
 
-    private void validate(String pathToOutputFile) throws Exception {
-        boolean isValid = validator.isValid(pathToOutputFile);
-        assertThat(isValid, is(true));
-    }
-
     private String getPathToInputFile() {
-        return getPathToFileOnClasspath("unsignedFile.xml");
+        return getPathToFileOnClasspath("nota.xml");
     }
 
     private String getPathToFileOnClasspath(String name) {
