@@ -1,6 +1,5 @@
 RPS Sign
 ========
-
 Fiz este projeto para assinar o XML do RPS de Belo Horizonte. Assim posso assinar um lote de notas fiscais e fazer upload no site da prefeitura.
 
 Mais informações sobre os lotes pode ser encontrada aqui:
@@ -13,14 +12,12 @@ http://www.pbh.gov.br/bhissdigital/download/nfse/Lote_RPS.zip
 
 Como usar o projeto
 -------------------
-
 Este projeto pode ser modificado usando o eclipse e maven. Para gerar o .jar use o comando:
 
     mvn package
 
 Uso
 ---
-
     java -jar target/rps-sign-1.0-jar-with-dependencies.jar
     usage: xmlsign [-h] [-i <arg>] [-k <arg>] [-o <arg>] [-p <arg>]
      -h,--help             exibe esta mensagem
