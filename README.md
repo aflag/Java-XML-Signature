@@ -12,9 +12,9 @@ http://www.pbh.gov.br/bhissdigital/download/nfse/Lote_RPS.zip
 
 Como instalar o projeto
 -------------------
-Este projeto pode ser modificado usando o eclipse e maven. Para gerar o executável rps-sign, rode o comando (você precisa ter o maven instalado):
+Este projeto pode ser modificado usando o eclipse e maven. Para gerar o executável rps-sign, rode o comando (você precisa ter o maven e o make instalados):
 
-    ./distribute
+    make
 
 Isso irá gerar um executável rps-sign que rodará usando o java do sistema, em /usr/bin/java. O programa foi testado com openjdk 7
 
