@@ -18,6 +18,14 @@ Este projeto pode ser modificado usando o eclipse e maven. Para gerar o executá
 
 Isso irá gerar um executável rps-sign que rodará usando o java do sistema, em /usr/bin/java. O programa foi testado com openjdk 7
 
+Se você usar debian (provavelmente Ubuntu também), você pode adicionar o seguinte repositório
+
+    deb http://kontesti.me/debian unstable debian
+
+Depois instale com
+
+    apt-get install rps-sign
+
 Uso
 ---
     ./rps-sign
