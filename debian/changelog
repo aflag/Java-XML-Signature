@@ -1,3 +1,9 @@
+rps-sign (1.2) UNRELEASED; urgency=low
+
+  * Excluído X509SubjectName
+
+ -- Rafael Cunha de Almeida <rafael@kontesti.me>  Sun, 23 Jun 2013 21:31:50 -0300
+
 rps-sign (1.1) unstable; urgency=low
 
   * Using java 6
