@@ -2,13 +2,13 @@ Source: rps-sign
 Section: java
 Priority: extra
 Maintainer: Rafael Cunha de Almeida <rafael@kontesti.me>
-Build-Depends: debhelper (>= 8.0.0), java7-jdk, maven2
+Build-Depends: debhelper (>= 8.0.0), java6-sdk, maven2
 Standards-Version: 3.9.3
 Homepage: https://github.com/aflag/rps-sign
 
 Package: rps-sign
 Architecture: all
-Depends: ${misc:Depends}, java7-runtime-headless
+Depends: ${misc:Depends}, java6-runtime-headless
 Description: signs RPS XML document
  Programa para assinar o XML de RPS de Belo Horizonte. Este programa permite
  assinar um lote de notas (RPS) para envio através do site da prefeitura.
