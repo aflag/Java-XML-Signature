@@ -50,7 +50,7 @@ public class Pkcs12KeyProvider implements PrivateKeyProvider {
     private KeyInfo createKeyInfoFactory(X509Certificate certificate) {
         KeyInfoFactory keyInfoFactory = factory.getKeyInfoFactory();
         List<Serializable> x509Content = new ArrayList<Serializable>();
-        x509Content.add(certificate.getSubjectX500Principal().getName());
+        //x509Content.add(certificate.getSubjectX500Principal().getName());
         x509Content.add(certificate);
         X509Data data = keyInfoFactory.newX509Data(x509Content);
         return keyInfoFactory.newKeyInfo(singletonList(data));
