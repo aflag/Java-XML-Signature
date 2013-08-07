@@ -52,6 +52,7 @@ public class XmlSigner extends DomValidationOperator {
     	for (int i = 0; i < elements.getLength(); ++i) {
     		Element rps = (Element) elements.item(i);
     		Element infRps = (Element) rps.getElementsByTagName("InfRps").item(0);
+    		infRps.setIdAttribute("Id", true);
             SignedInfo signedInfo = createSignature("#"+infRps.getAttribute("Id"));
             XMLSignature signature = factory.newXMLSignature(signedInfo, provider.loadKeyInfo());
     		DOMSignContext signContext = new DOMSignContext(provider.loadPrivateKey(), rps);
@@ -59,6 +60,7 @@ public class XmlSigner extends DomValidationOperator {
     	}
     	Element enviarLoteRpsEnvio = (Element) document.getElementsByTagName("EnviarLoteRpsEnvio").item(0);
  		Element loteRps = (Element) enviarLoteRpsEnvio.getElementsByTagName("LoteRps").item(0);
+ 		loteRps.setIdAttribute("Id", true);
         SignedInfo signedInfo = createSignature("#"+loteRps.getAttribute("Id"));
         XMLSignature signature = factory.newXMLSignature(signedInfo, provider.loadKeyInfo());
 		DOMSignContext signContext = new DOMSignContext(provider.loadPrivateKey(), enviarLoteRpsEnvio);
